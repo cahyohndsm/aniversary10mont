@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anniversary 10 Bulan</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.ibb.co/w0HQKfr/love-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      background-color: rgba(255, 192, 203, 0.85);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 20px;
+      margin-top: 80px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #880e4f;
+    }
+
+    .photo {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .photo img {
+      max-width: 100%;
+      border-radius: 15px;
+      border: 5px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin-top: 20px;
+      text-align: justify;
+      color: #4a148c;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-style: italic;
+      color: #6a1b9a;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: #6a1b9a;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-item p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .falling {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Popup Cinta */
+    #lovePopup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    #lovePopup .popup-content {
+      background: white;
+      color: #880e4f;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    #lovePopup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #e91e63;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Tombol Musik */
+    .music-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #e91e63;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1001;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Popup Surat Cinta -->
+<div id="lovePopup">
+  <div class="popup-content">
+    <h2>💌 Hai Cinta!</h2>
+    <p>Hari ini tepat 10 bulan kita bersama. Aku ingin kamu tahu... aku mencintaimu sepenuh hati 💖</p>
+    <button onclick="closePopup()">Aku juga sayang kamu 😘</button>
+  </div>
+</div>
+
+<!-- Audio Musik -->
+<audio id="romanticMusic" loop>
+  <source src="/static/Dudy Oris - Aku Yang Jatuh Cinta(Lyrics).mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung pemutar audio.
+</audio>
+
+<!-- Tombol Musik -->
+<button class="music-button" onclick="toggleMusic()">🔊 Play Musik</button>
+
+<div class="container">
+  <h1>Happy 10 Month Anniversary!</h1>
+  <h2>Untuk Kamu, Cintaku 💖</h2>
+
+  <div class="message">
+    <p>Hey cinta, hari ini adalah hari spesial yang ke-10 bulan kita bersama-sama! Waktu berlalu begitu cepat, tapi tiap momen bersamamu membuatnya begitu berharga.</p>
+    <p>Kamu adalah orang yang membuatku tertawa, yang selalu ada untukku, dan yang membuat hidupku jadi lebih berarti. Terima kasih sudah berada di sampingku selama ini.</p>
+    <p>Aku berjanji untuk terus menjaga dan mencintaimu lebih dari sebelumnya. Cheers untuk 10 bulan kita, dan untuk momen-momen indah yang masih menunggu di depan!</p>
+    <p>Aku mencintaimu lebih dari yang bisa aku ungkapkan dengan kata-kata ❤️</p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="/static/photo1.jpg" alt="Moment 1">
+      <p>Kamu adalah alasan aku tersenyum setiap hari 💕</p>
+      <p>Bertemu dengan orang sepertimu adalah adiah paling baik di tahun ini</p>
+      <p>Bisakah aku yangmenjadi nomor dua di hatimu setelah orang tuamu?</p>
+    </div>
+    <div class="gallery-item">
+      <img src="/static/photo2.jpg" alt="Moment 2">
+      <p>❤️ Mencintaimu adalah hal terindah yang selama ini aku rasakan 💕 </p>
+    </div>
+    <div class="gallery-item">
+      <img src="/static/photo3.jpg" alt="Moment 3">
+      <p>Genggaman tanganmu membuatku merasa aman 🤝</p>
+    </div>
+    <div class="gallery-item">
+      <img src="/static/photo4.jpg" alt="Moment 4">
+      <p>Jika langit mempunyai pelangi 🌈 untuk di banggakan</p>
+      <p>Aku mempunyai kamu untuk di perjuangkan</p>
+    </div>
+    <div class="gallery-item">
+      <img src="/static/photo5.jpg" alt="Moment 5">
+      <p>❤️Kamu adalah seorang sedang kucintai sedalam ini ❤️</p>
+      <p>Kamu adalah bahagia hidupku, Tolong jangan pergi yhaa 💖</p>
+    </div>
+    <div class="gallery-item">
+      <img src="/static/photo6.jpg" alt="Moment 6">
+       <p>Kamu bukan hanya cinta, kamu adalah hidupku ❤️</p>
+      <p>❤️ Semoga hubungan kita semakin baik di setiap harinya 💘</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    - Dari seseorang yang mencintaimu sepenuh hati 💘
+  </div>
+</div>
+
+<!-- Efek Jatuh Hati & Bunga -->
+<script>
+  function closePopup() {
+    document.getElementById('lovePopup').style.display = 'none';
+  }
+
+  const icons = ['❤️', '🌹', '💖'];
+
+  function createFallingIcon() {
+    const icon = document.createElement('div');
+    icon.classList.add('falling');
+    icon.style.left = Math.random() * window.innerWidth + 'px';
+    icon.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    icon.innerText = icons[Math.floor(Math.random() * icons.length)];
+    document.body.appendChild(icon);
+    setTimeout(() => icon.remove(), 5000);
+  }
+
+  setInterval(createFallingIcon, 200);
+
+  // Musik Play/Pause
+  const music = document.getElementById("romanticMusic");
+  const musicButton = document.querySelector(".music-button");
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      musicButton.innerHTML = "⏸ Pause Musik";
+    } else {
+      music.pause();
+      musicButton.innerHTML = "🔊 Play Musik";
+    }
+  }
+</script>
+
+</body>
+</html>
